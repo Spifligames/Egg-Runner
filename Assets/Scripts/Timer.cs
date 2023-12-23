@@ -5,28 +5,61 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-	public Text timerText;
-	private float startTime;
-	private bool finished = false;
+    public Text timerText;
+    public Text bestTimeText;
+    private float startTime;
+    private bool finished = false;
+    private float bestTime;
 
-	void start () {
-		startTime = Time.timeSinceLevelLoad;
-	}
+    private string sceneName; // Variable to store the current scene name
 
-	void Update () {
-		if(finished)
-			return;
+    void Start()
+    {
+        startTime = Time.timeSinceLevelLoad;
+        sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
-		float t = Time.timeSinceLevelLoad - startTime;
+        // Load the best time for the current scene from PlayerPrefs
+        bestTime = PlayerPrefs.GetFloat(sceneName + "BestTime", 0f);
+        UpdateBestTimeDisplay();
+    }
 
-		string minutes = ((int) t / 60).ToString();
-		string seconds = (t % 60).ToString("f2");
+    void Update()
+    {
+        if (finished)
+            return;
 
-		timerText.text = minutes + ":" + seconds;
-	}
-	public void Finish()
-	{
-		finished = true;
-		timerText.color = Color.yellow;
-	}
+        float currentTime = Time.timeSinceLevelLoad - startTime;
+
+        if (!finished)
+        {
+            string minutes = ((int)currentTime / 60).ToString();
+            string seconds = (currentTime % 60).ToString("f2");
+
+            timerText.text = minutes + ":" + seconds;
+        }
+    }
+
+    public void Finish()
+    {
+        if (finished)
+            return;
+
+        finished = true;
+        timerText.color = Color.yellow;
+
+        float currentTime = Time.timeSinceLevelLoad - startTime;
+
+        if (currentTime < bestTime || bestTime == 0f)
+        {
+            bestTime = currentTime;
+            PlayerPrefs.SetFloat(sceneName + "BestTime", bestTime);
+            PlayerPrefs.Save();
+            UpdateBestTimeDisplay();
+        }
+    }
+
+    private void UpdateBestTimeDisplay()
+    {
+        bestTimeText.text = "Best Time: " + bestTime.ToString("F2");
+    }
 }

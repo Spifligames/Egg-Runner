@@ -4,8 +4,29 @@ using UnityEngine;
 
 public class WinBox : MonoBehaviour
 {
-	private void OnTriggerEnter(Collider other)
-	{
-		GameObject.Find("FPSController").SendMessage("Finish");
-	}
+    private Timer timerScript;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+			Debug.Log("Player entered WinBox collider");
+	
+            timerScript = other.GetComponent<Timer>();
+
+			if (timerScript != null)
+        	{
+            	timerScript.Finish();
+        	}
+        	else
+        	{
+           	 Debug.Log("Timer component not found on Player GameObject");
+        	}
+
+            if (timerScript != null)
+            {
+                timerScript.Finish();
+            }
+        }
+    }
 }
