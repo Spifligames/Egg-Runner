@@ -6,6 +6,7 @@ public class QuitApplication : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
 	{
+        UnityEditor.EditorApplication.isPlaying = false;
 		Application.Quit();
 	}
 
