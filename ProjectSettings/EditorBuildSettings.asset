@@ -20,8 +20,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 8bf9ee4e126ffb6479a852cc8092754b
-  - enabled: 1
-    path: Assets/Scenes/bhop_Level1.unity
-    guid: 97911768a9a9e9b459412590e1d957a2
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeScene1 : MonoBehaviour
+public class ChangeSceneMenu : MonoBehaviour
 {
 
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 }
