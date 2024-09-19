@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WinBox : MonoBehaviour
 {
+	public int levelNumber;
     private Timer timerScript;
 
     void OnTriggerEnter(Collider other)

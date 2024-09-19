@@ -12,6 +12,13 @@ public class Timer : MonoBehaviour
     private float bestTime;
 
     private string sceneName; // Variable to store the current scene name
+    
+    private DDOLManager gameManager;
+
+    private void OnEnable()
+    {
+        gameManager = GameObject.Find("gameManager").GetComponent<DDOLManager>();
+    }
 
     void Start()
     {
@@ -55,6 +62,7 @@ public class Timer : MonoBehaviour
             PlayerPrefs.SetFloat(sceneName + "BestTime", bestTime);
             PlayerPrefs.Save();
             UpdateBestTimeDisplay();
+            gameManager.SaveScore(bestTime, sceneName);
         }
     }
 
