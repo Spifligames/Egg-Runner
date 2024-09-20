@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ChangeSceneLevel1 : MonoBehaviour
 {
-
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(2);
+        if (other.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>()) ReloadScene();
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

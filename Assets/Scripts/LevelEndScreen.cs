@@ -1,8 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelEndScreen : MonoBehaviour
 {
+    [SerializeField] private UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
     public GameObject[] buttons;
 
     private void Start()
@@ -27,6 +28,15 @@ public class LevelEndScreen : MonoBehaviour
         {
             button.SetActive(true);
         }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        player.enabled = false;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
 
