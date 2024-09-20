@@ -961,7 +961,9 @@ MonoBehaviour:
   movePositions:
   - {x: -8, y: -6, z: 114.819145}
   - {x: 8, y: -6, z: 114.819145}
+  moveRotations: []
   moveTime: 3
+  rotateTime: 0
 --- !u!65 &280944219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3084,7 +3086,9 @@ MonoBehaviour:
   movePositions:
   - {x: 8, y: -6.520572, z: 100}
   - {x: -8, y: -6.520572, z: 100}
+  moveRotations: []
   moveTime: 3
+  rotateTime: 0
 --- !u!64 &617718086
 MeshCollider:
   m_ObjectHideFlags: 0

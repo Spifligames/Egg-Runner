@@ -6,12 +6,16 @@ public class LinearMovingPlatform : MonoBehaviour
 {
     public GameObject Player;
     [SerializeField] private List<Vector3> movePositions = new List<Vector3>();
+    [SerializeField] private List<Quaternion> moveRotations = new List<Quaternion>();
     [SerializeField] private float moveTime;
+    [SerializeField] private float rotateTime;
     private int movePosCounter = 0;
+    private int moveRotCounter = 0;
 
     private void OnEnable()
     {
-        StartCoroutine(MovePlatform());
+        if (movePositions.Count != 0) StartCoroutine(MovePlatform());
+        if (moveRotations.Count != 0) StartCoroutine(RotatePlatform());
     }
 
     private IEnumerator MovePlatform()
@@ -27,18 +31,41 @@ public class LinearMovingPlatform : MonoBehaviour
         }
 
         gameObject.transform.position = movePositions[movePosCounter];
-        SetParams();
+        SetParams(0);
     }
 
-    private void SetParams()
+    private IEnumerator RotatePlatform()
     {
-        movePosCounter++;
-        Debug.Log(movePositions.Count + ", " + movePosCounter);
-        if (movePosCounter >= movePositions.Count)
+        float timeElapsed = 0;
+        Quaternion startingRot = gameObject.transform.rotation;
+
+        while (timeElapsed < rotateTime)
         {
-            movePosCounter = 0;
+            gameObject.transform.rotation =
+                Quaternion.Lerp(startingRot, moveRotations[moveRotCounter], timeElapsed / rotateTime);
+            timeElapsed += Time.deltaTime;
+            yield return null;
         }
-        StartCoroutine(MovePlatform());
+
+        gameObject.transform.rotation = moveRotations[moveRotCounter];
+        SetParams(1);
+    }
+
+    private void SetParams(int mode)
+    {
+        switch (mode)
+        {
+            case 0:
+                movePosCounter++;
+                if (movePosCounter >= movePositions.Count) movePosCounter = 0;
+                StartCoroutine(MovePlatform());
+                break;
+            case 1:
+                moveRotCounter++;
+                if (moveRotCounter >= moveRotations.Count) moveRotCounter = 0;
+                StartCoroutine(RotatePlatform());
+                break;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
