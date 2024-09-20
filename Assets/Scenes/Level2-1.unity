@@ -963,6 +963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 856113055}
+  loopPos: 1
+  loopRot: 1
   movePositions:
   - {x: -8, y: -6, z: 114.819145}
   - {x: 8, y: -6, z: 114.819145}
@@ -3088,6 +3090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 856113055}
+  loopPos: 1
+  loopRot: 1
   movePositions:
   - {x: 8, y: -6.520572, z: 100}
   - {x: -8, y: -6.520572, z: 100}
