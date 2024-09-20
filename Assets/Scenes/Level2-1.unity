@@ -550,6 +550,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flat_Rock_22
       objectReference: {fileID: 0}
+    - target: {fileID: 7891603054546841380, guid: 15875045cc5d24d44a7fa4349f0a8c1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
