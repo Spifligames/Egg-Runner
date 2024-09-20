@@ -937,7 +937,6 @@ GameObject:
   - component: {fileID: 280944221}
   - component: {fileID: 280944219}
   - component: {fileID: 280944218}
-  - component: {fileID: 280944217}
   - component: {fileID: 280944224}
   m_Layer: 0
   m_Name: Moving Platform 2
@@ -946,28 +945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &280944217
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280944216}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15ac70ec67e1b4e44b8b0292691c684e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &280944218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +958,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 856113055}
+  movePositions:
+  - {x: -8, y: -6, z: 114.819145}
+  - {x: 8, y: -6, z: 114.819145}
+  moveTime: 3
 --- !u!65 &280944219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1064,7 +1045,7 @@ Transform:
   m_GameObject: {fileID: 280944216}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.4199, y: 0.3214321, z: 65.0123}
+  m_LocalPosition: {x: 18.492767, y: 0.3214321, z: 65.0123}
   m_LocalScale: {x: 14.673153, y: 0.61123, z: 13.834074}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1202,6 +1183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342671295866585447, guid: 27f210ed52b6c0f409f410ac194d0a7c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4342671295866887495, guid: 27f210ed52b6c0f409f410ac194d0a7c,
         type: 3}
@@ -2984,7 +2970,6 @@ GameObject:
   - component: {fileID: 617718081}
   - component: {fileID: 617718079}
   - component: {fileID: 617718085}
-  - component: {fileID: 617718084}
   - component: {fileID: 617718086}
   m_Layer: 0
   m_Name: Moving Platform 1
@@ -3076,35 +3061,13 @@ Transform:
   m_GameObject: {fileID: 617718078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4927664, y: -0.19914, z: 50.193153}
+  m_LocalPosition: {x: 2.4927664, y: -0.19914007, z: 50.193153}
   m_LocalScale: {x: 13.158994, y: 1.1490246, z: 13.158994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 151284662}
   m_Father: {fileID: 451995912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &617718084
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617718078}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 37f82af223685084b84164293ea9325a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &617718085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3118,6 +3081,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 856113055}
+  movePositions:
+  - {x: 8, y: -6.520572, z: 100}
+  - {x: -8, y: -6.520572, z: 100}
+  moveTime: 3
 --- !u!64 &617718086
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5829,6 +5796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342671295866585447, guid: 27f210ed52b6c0f409f410ac194d0a7c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4342671295866887495, guid: 27f210ed52b6c0f409f410ac194d0a7c,
         type: 3}
