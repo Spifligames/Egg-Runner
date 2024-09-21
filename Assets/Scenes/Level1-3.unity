@@ -453,6 +453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  loopPos: 1
+  loopRot: 1
+  movePositions: []
+  moveRotations: []
+  moveTime: 0
+  rotateTime: 0
 --- !u!65 &209925324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -728,6 +734,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  loopPos: 1
+  loopRot: 1
+  movePositions: []
+  moveRotations: []
+  moveTime: 0
+  rotateTime: 0
 --- !u!65 &397214456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1166,6 +1178,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  loopPos: 1
+  loopRot: 1
+  movePositions: []
+  moveRotations: []
+  moveTime: 0
+  rotateTime: 0
 --- !u!65 &684721919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1934,7 +1952,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198269178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9909e2178a43034438d5f15ecdb1bd2e, type: 3}
   m_Name: 
@@ -1954,7 +1972,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2040,8 +2058,8 @@ Transform:
   m_GameObject: {fileID: 1233240960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.172, y: 0.18099962, z: 4.8}
-  m_LocalScale: {x: 0.11118579, y: 0.18099, z: 1}
+  m_LocalPosition: {x: -0.4281, y: 0.15546, z: 4.8}
+  m_LocalScale: {x: 0.089588255, y: 0.1458332, z: 0.80575275}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1198269179}
@@ -2054,7 +2072,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233240960}
-  m_Text: Lobby
+  m_Text: End of world 1...
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -2764,6 +2782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e5d1a2a5848924992ecfaff9a44854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelNumber: 0
 --- !u!65 &1686056369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3252,6 +3271,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  loopPos: 1
+  loopRot: 1
+  movePositions: []
+  moveRotations: []
+  moveTime: 0
+  rotateTime: 0
 --- !u!65 &2041858813
 BoxCollider:
   m_ObjectHideFlags: 0

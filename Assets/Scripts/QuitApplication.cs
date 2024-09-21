@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+/*﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -10,4 +10,4 @@ public class QuitApplication : MonoBehaviour {
 		Application.Quit();
 	}
 
-}
+}*/
