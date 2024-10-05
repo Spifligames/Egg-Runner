@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class LinearMovingPlatform : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject player;
     [SerializeField] private bool loopPos = true;
     [SerializeField] private bool loopRot = true;
     [SerializeField] private List<Vector3> movePositions = new List<Vector3>();
     [SerializeField] private List<Quaternion> moveRotations = new List<Quaternion>();
     [SerializeField] private float moveTime;
     [SerializeField] private float rotateTime;
+    [SerializeField] private bool rotatePlayerWithPlatform = false;
     private int movePosCounter = 0;
     private int moveRotCounter = 0;
+    private bool playerOnPlatform = false;
+    private Quaternion playerRotation;
     
 
     private void OnEnable()
@@ -49,7 +52,6 @@ public class LinearMovingPlatform : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-
         gameObject.transform.rotation = moveRotations[moveRotCounter];
         SetParams(1);
     }
@@ -87,10 +89,12 @@ public class LinearMovingPlatform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Player.transform.parent = transform;
+        player.transform.parent = transform;
+        playerOnPlatform = true;
     }
     private void OnTriggerExit(Collider other)
     {
-        Player.transform.parent = null;
+        player.transform.parent = null;
+        playerOnPlatform = false;
     }
 }
