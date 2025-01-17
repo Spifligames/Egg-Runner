@@ -8,7 +8,7 @@ public class ChangeSceneDEBUG : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
 }

@@ -8,7 +8,7 @@ public class ChangeSceneMenu : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 }
