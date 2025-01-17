@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 244412181}
   - component: {fileID: 244412180}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Frame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,7 +558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 323914922}
   m_Layer: 0
-  m_Name: Level0
+  m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,7 +1774,7 @@ GameObject:
   - component: {fileID: 822892708}
   - component: {fileID: 822892707}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Frame 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3630,7 +3630,7 @@ GameObject:
   - component: {fileID: 1447076336}
   - component: {fileID: 1447076335}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Frame 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4516,7 +4516,7 @@ GameObject:
   - component: {fileID: 1832265463}
   - component: {fileID: 1832265466}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Inner Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

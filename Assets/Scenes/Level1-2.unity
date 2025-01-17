@@ -232,6 +232,7 @@ Transform:
   - {fileID: 646136838}
   - {fileID: 1036110302}
   - {fileID: 1560034774}
+  - {fileID: 996333206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &109045398
@@ -513,7 +514,7 @@ GameObject:
   - component: {fileID: 244412181}
   - component: {fileID: 244412180}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Frame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 323914922}
   m_Layer: 0
-  m_Name: Level0
+  m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1547,7 +1548,7 @@ GameObject:
   - component: {fileID: 646136835}
   - component: {fileID: 646136839}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Swinning Trap 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1926,7 +1927,7 @@ GameObject:
   - component: {fileID: 822892708}
   - component: {fileID: 822892707}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Frame 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2472,12 +2473,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 20768098}
     m_Modifications:
     - target: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 8.755927
+      value: 8.755928
       objectReference: {fileID: 0}
     - target: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
         type: 3}
@@ -2487,22 +2488,22 @@ PrefabInstance:
     - target: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.1454
+      value: 5.1454005
       objectReference: {fileID: 0}
     - target: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.58
+      value: -13.772181
       objectReference: {fileID: 0}
     - target: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.61
+      value: -21.606846
       objectReference: {fileID: 0}
     - target: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.03
+      value: 37.66356
       objectReference: {fileID: 0}
     - target: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
         type: 3}
@@ -2549,6 +2550,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c95646f11c8203b438f9c638247c3121, type: 3}
+--- !u!4 &996333206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2838288787159351045, guid: c95646f11c8203b438f9c638247c3121,
+    type: 3}
+  m_PrefabInstance: {fileID: 996333205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1009885017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,7 +2771,7 @@ GameObject:
   - component: {fileID: 1036110304}
   - component: {fileID: 1036110303}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Swinning Trap 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3682,7 +3689,7 @@ GameObject:
   - component: {fileID: 1447076336}
   - component: {fileID: 1447076335}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Frame 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3912,7 +3919,7 @@ GameObject:
   - component: {fileID: 1560034776}
   - component: {fileID: 1560034775}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: Swinning Trap 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4482,7 +4489,7 @@ GameObject:
   - component: {fileID: 1832265463}
   - component: {fileID: 1832265466}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Inner Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4932,4 +4939,3 @@ SceneRoots:
   - {fileID: 323914922}
   - {fileID: 1473348830}
   - {fileID: 20768098}
-  - {fileID: 996333205}
