@@ -1,0 +1,22 @@
+JUMP PADS
+- A blue pad that makes the player jump higher while being stood on
+
+SPEED PADS
+- A green pad that grants the player faster run speed for x seconds upon touching
+- Visual HUD indicator of boost time remaining
+
+STATISTICS
+- Viewable from within the lobby room
+- Lifetime stats include: total jumps, distance ran, total level completes (not unique), time played
+
+MULTIPLE GAME MODE SELECTION
+- Egg Jump: the standard platforming mode
+- Egg Drop: Minecrtaft dropper inspired gamemode
+- Egg Hunt: find x hidden eggs as fast as possible
+
+STOPWATCH ADJUSTMENTS
+- Time ends upon portal entry instead of "winbox" collider entry
+
+LEVEL SELECT REWORK
+- Ditch the worlds system. Every level will be shown from a single screen (scrollable?)
+- Previous level must be completed once before the next is available
