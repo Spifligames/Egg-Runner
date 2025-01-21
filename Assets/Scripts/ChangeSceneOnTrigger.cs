@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeSceneDEBUG : MonoBehaviour
+public class ChangeSceneOnTrigger : MonoBehaviour
 {
-
+    public string sceneName;
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(sceneName);
     }
 
 }

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelEndScreen : MonoBehaviour
 {
     [SerializeField] private UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
+    [SerializeField] private Timer timer;
     public GameObject[] buttons;
 
     private void Start()
@@ -32,6 +33,7 @@ public class LevelEndScreen : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         player.enabled = false;
+        timer.Finish();
     }
 
     public void LoadScene(string sceneName)

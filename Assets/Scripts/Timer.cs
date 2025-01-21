@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Text timerText;
-    public Text bestTimeText;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI bestTimeText;
+    public Color winColor = Color.yellow;
     private float startTime;
     private bool finished = false;
     private float bestTime;
@@ -45,7 +47,7 @@ public class Timer : MonoBehaviour
             return;
 
         finished = true;
-        timerText.color = Color.yellow;
+        timerText.color = winColor;
 
         float currentTime = Time.timeSinceLevelLoad - startTime;
 
