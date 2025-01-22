@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Lobby
+  scene: Lobby
 --- !u!1 &5594789
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level1-1
+  scene: Level1-1
 --- !u!114 &550434570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level2-1
+  scene: Level2-1
 --- !u!114 &1576115975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2699,7 +2699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level3-1
+  scene: Level3-1
 --- !u!114 &2065561972
 MonoBehaviour:
   m_ObjectHideFlags: 0
