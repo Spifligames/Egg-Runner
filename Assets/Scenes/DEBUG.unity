@@ -1157,6 +1157,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 150482323}
+    - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
+        type: 3}
+      propertyPath: effectDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
+        type: 3}
+      propertyPath: jumpMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8769201482488176687, guid: db866bfe309039e4bae58c74e7321220,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -5,10 +5,12 @@ public class EffectPad : MonoBehaviour
 {
     public enum PadEffect { JumpBoost, SpeedBoost }
     
-    [Header("Effect Settings")]
+    [Header("General Effect Settings")]
     public PadEffect padEffect;
-    public float effectDuration = 5f;
+    [Header("Speed Effect Settings")] 
+    public float speedEffectDuration = 5f;
     public float speedMultiplier = 2f;
+    [Header("Jump Effect Settings")]
     public float jumpMultiplier = 2f;
     [Header("Object References")]
     [SerializeField] private UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
@@ -18,6 +20,7 @@ public class EffectPad : MonoBehaviour
     private float initialPlayerWalkSpeed;
     private float initialPlayerRunSpeed;
     private float initialPlayerJumpSpeed;
+    private bool isJumpEffectActive = false;
     private Renderer objectRenderer;
 
     private void Start()
@@ -55,13 +58,18 @@ public class EffectPad : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        isJumpEffectActive = false;
+    }
+
     IEnumerator StartPadEffect()
     {
         float timeElapsed = 0;
         switch (padEffect)
         {
             case PadEffect.SpeedBoost:
-                while (timeElapsed < effectDuration)
+                while (timeElapsed < speedEffectDuration)
                 {
                     player.m_WalkSpeed = initialPlayerWalkSpeed * speedMultiplier;
                     player.m_RunSpeed = initialPlayerRunSpeed * speedMultiplier;
@@ -73,10 +81,11 @@ public class EffectPad : MonoBehaviour
                 player.m_RunSpeed = initialPlayerRunSpeed;
                 break;
             case PadEffect.JumpBoost:
-                while (timeElapsed < effectDuration)
+                player.m_JumpSpeed = initialPlayerRunSpeed * jumpMultiplier;
+                isJumpEffectActive = true;
+                while (isJumpEffectActive)
                 {
-                    player.m_JumpSpeed = initialPlayerJumpSpeed * jumpMultiplier;
-                    timeElapsed += Time.deltaTime;
+                    Debug.Log("Jump effect active");
                     yield return null;
                 }
                 player.m_JumpSpeed = initialPlayerJumpSpeed;
