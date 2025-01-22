@@ -155,7 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   padEffect: 1
-  effectDuration: 5
+  usePostProcessingEffects: 1
+  postProcessTransitionTime: 0.5
+  vignetteIntensity: 0.5
+  speedEffectDuration: 5
   speedMultiplier: 2
   jumpMultiplier: 2
   player: {fileID: 0}
