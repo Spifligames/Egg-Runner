@@ -155,12 +155,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   padEffect: 1
-  usePostProcessingEffects: 1
-  postProcessTransitionTime: 0.5
-  vignetteIntensity: 0.5
   speedEffectDuration: 5
   speedMultiplier: 2
   jumpMultiplier: 2
+  usePostProcessingEffects: 1
+  postProcessTransitionTime: 0.5
+  vignetteIntensity: 0.5
+  lensDistortionIntensity: 30
+  cameraFovIncrease: 10
   player: {fileID: 0}
   jumpPadMaterial: {fileID: 2100000, guid: d72bf5a89730d6b44bdce0d2f92905fe, type: 2}
   speedPadMaterial: {fileID: 2100000, guid: 7d69e79c25af7a640983922f53cae41e, type: 2}
