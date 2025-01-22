@@ -1,9 +1,11 @@
 JUMP PADS
 - A blue pad that makes the player jump higher while being stood on
+- Wind lines going straight up as you accelerate and fade as you deaccelerate
 
 SPEED PADS
 - A green pad that grants the player faster run speed for x seconds upon touching
-- Visual HUD indicator of boost time remaining
+- Visual HUD indicator of boost time remaining and green vignette
+- FOV slightly increases under the effects of speed and wind lines around the edges of the screen
 
 STATISTICS
 - Viewable from within the lobby room
@@ -18,5 +20,21 @@ STOPWATCH ADJUSTMENTS
 - Time ends upon portal entry instead of "winbox" collider entry
 
 LEVEL SELECT REWORK
-- Ditch the worlds system. Every level will be shown from a single screen (scrollable?)
+- Ditch the worlds system. Every level will be shown from a single screen (scrollable?) and/or from the lobby
 - Previous level must be completed once before the next is available
+- Possible level sections for the lobby by theme or difficulty
+- Potentially have the lobby change as the player progresses through levels (additional furniture, decorations and trophies)
+- Player stands outside level portal when leaving said level
+
+PAUSE MENU
+- Resume game
+- Restart Level
+- Return to lobby
+
+EGG RUSH MODE
+- "Cannonball" styled challenge unlocked upon completing final level in selected game mode
+- All levels must be completed in one go
+- Time is saved on completion of final level
+- Falling out the map dos not reset time
+- Portal entry automatically loads next level
+- Restarting in the pause menu restarts the entire challenge
