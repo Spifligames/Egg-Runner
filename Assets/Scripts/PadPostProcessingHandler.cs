@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class PostProcessingHandler : MonoBehaviour
+public class PadPostProcessingHandler : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
