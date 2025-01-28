@@ -115,10 +115,12 @@ public class PadPostProcessingHandler : MonoBehaviour
                     switch (enable)
                     {
                         case true:
+                            Debug.Log("Transitioned into jump pad FX");
                             vignette.intensity.value = Mathf.Lerp(0, vignetteIntensity,
                                 timeElapsed / postProcessTransitionTime);
                             break;
                         case false:
+                            Debug.Log("Transitioned out of jump pad FX");
                             vignette.intensity.value = Mathf.Lerp(vignetteIntensity, 0,
                                 timeElapsed / postProcessTransitionTime);
                             break;

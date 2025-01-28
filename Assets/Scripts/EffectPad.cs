@@ -111,62 +111,14 @@ public class EffectPad : MonoBehaviour
 
                 while (isJumpEffectActive)
                 {
-                    Debug.Log("Jump effect active");
+                    //Debug.Log("Jump effect active");
                     yield return null;
                 }
                 
-                if (_ppHandler.usePostProcessingEffects && !_ppHandler.effectActive) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.SpeedBoost, false));
+                Debug.Log("Stepped off jump pad");
+                if (_ppHandler.usePostProcessingEffects) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.JumpBoost, false));
                 _ppHandler.player.m_JumpSpeed = initialPlayerJumpSpeed;
                 break;
         }
     }
-
-    /*private IEnumerator PPEffectTransition(PadEffect effect, bool enable)
-    {
-        effectActive = true;
-        float timeElapsed = 0;
-        switch (effect)
-        {
-            case PadEffect.SpeedBoost:
-                    
-                while (timeElapsed < postProcessTransitionTime)
-                {
-                    switch (enable)
-                    {
-                        case true:
-                            vignette.intensity.value = Mathf.Lerp(0, vignetteIntensity,
-                                timeElapsed / postProcessTransitionTime);
-                            lensDistortion.intensity.value = Mathf.Lerp(0, -lensDistortionIntensity,
-                                timeElapsed / postProcessTransitionTime);
-                            playerCamera.fieldOfView = Mathf.Lerp(initialPlayerCameraFov,
-                                (initialPlayerCameraFov + 10f), timeElapsed / postProcessTransitionTime);
-                            break;
-                        case false:
-                            vignette.intensity.value = Mathf.Lerp(vignetteIntensity, 0,
-                                timeElapsed / postProcessTransitionTime);
-                            lensDistortion.intensity.value = Mathf.Lerp(-lensDistortionIntensity, 0,
-                                timeElapsed / postProcessTransitionTime);
-                            playerCamera.fieldOfView = Mathf.Lerp((initialPlayerCameraFov + 10f), initialPlayerCameraFov, timeElapsed / postProcessTransitionTime);
-                            break;
-                    }
-                    timeElapsed += Time.deltaTime;
-                    yield return null;
-                }
-                
-                switch (enable)
-                {
-                    case true:
-                        vignette.intensity.value = vignetteIntensity;
-                        lensDistortion.intensity.value = -lensDistortionIntensity;
-                        playerCamera.fieldOfView = (initialPlayerCameraFov + 10f);
-                        break;
-                    case false:
-                        vignette.intensity.value = 0;
-                        lensDistortion.intensity.value = 0;
-                        playerCamera.fieldOfView = initialPlayerCameraFov;
-                        break;
-                }
-                break;
-        }
-    }*/
 }
