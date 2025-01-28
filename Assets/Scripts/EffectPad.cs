@@ -17,61 +17,34 @@ public class EffectPad : MonoBehaviour
     [Header("Jump Effect Settings")]
     public float jumpMultiplier = 2f;
     
-    [Header("Post Processing Settings")]
-    public bool usePostProcessingEffects = true;
-    [SerializeField] private float postProcessTransitionTime = 0.5f;
-    [SerializeField] private float vignetteIntensity = 0.5f;
-    [SerializeField] private float lensDistortionIntensity = 30f;
-    [SerializeField] private float cameraFovIncrease = 10f;
-    
     [Header("Object References")]
-    [SerializeField] private UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
     [SerializeField] private Material jumpPadMaterial;
     [SerializeField] private Material speedPadMaterial;
 
     // General private variables
-    private bool effectActive = false;
     private bool isJumpEffectActive = false;
-    private bool colliderTouched = false;
-    private Camera playerCamera;
-    private float initialPlayerCameraFov;
     private float initialPlayerWalkSpeed;
     private float initialPlayerRunSpeed;
     private float initialPlayerJumpSpeed;
     private float mainTimeElapsed = 0f;
     private Renderer objectRenderer;
-    
-    // Post-processing specific private variables
-    private Color jumpVignetteColour = Color.green;
-    private Color speedVignetteColour = new Color(0, 0.25f, 1, 1);
-    private PostProcessVolume ppVolume;
-    private Vignette vignette;
-    private LensDistortion lensDistortion;
+    private Coroutine lastRoutine = null;
+    private PadPostProcessingHandler _ppHandler;
 
     private void Start()
     {
-        initialPlayerWalkSpeed = player.m_WalkSpeed;
-        initialPlayerRunSpeed = player.m_RunSpeed;
-        initialPlayerJumpSpeed = player.m_JumpSpeed;
-        playerCamera = GameObject.Find("Camera").GetComponent<Camera>();
-        initialPlayerCameraFov = playerCamera.fieldOfView;
-
-        if (usePostProcessingEffects)
+        try
         {
-            try
-            {
-                ppVolume = GameObject.FindGameObjectWithTag("PostProcessingVolume").GetComponent<PostProcessVolume>();
-            }
-            catch (NullReferenceException e)
-            {
-                Debug.LogWarning("ERROR: A post-processing volume couldn't be detected. The post-processing volume must exist in the scene and have the PostProcessingVolume tag.\nDetails: " + e);
-            }
-            
-            vignette = ppVolume.profile.GetSetting<Vignette>();
-            vignette.intensity.value = 0;
-            lensDistortion = ppVolume.profile.GetSetting<LensDistortion>();
-            lensDistortion.intensity.value = 0;
+            _ppHandler = GameObject.FindGameObjectWithTag("PostProcessingHandler").GetComponent<PadPostProcessingHandler>();
         }
+        catch (NullReferenceException e)
+        {
+            Debug.LogError("ERROR: A post-processing handler couldn't be detected. Post-processing will not work at all without a post-processing handler present in the scene.\nDetails: " + e);
+        }
+        
+        initialPlayerWalkSpeed = _ppHandler.player.m_WalkSpeed;
+        initialPlayerRunSpeed = _ppHandler.player.m_RunSpeed;
+        initialPlayerJumpSpeed = _ppHandler.player.m_JumpSpeed;
     }
 
     // This allows the colour of the effect pad to be changed when changing the type of pad, even when not in playmode.
@@ -98,14 +71,14 @@ public class EffectPad : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StopCoroutine(StartPadEffect());
-            StartCoroutine(StartPadEffect());
+            if (lastRoutine != null) StopCoroutine(lastRoutine);
+            lastRoutine = StartCoroutine(StartPadEffect());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isJumpEffectActive = false;
+        if (padEffect == PadEffect.JumpBoost) isJumpEffectActive = false;
     }
 
     IEnumerator StartPadEffect()
@@ -113,25 +86,25 @@ public class EffectPad : MonoBehaviour
         switch (padEffect)
         {
             case PadEffect.SpeedBoost:
-                if (usePostProcessingEffects && !effectActive) StartCoroutine(PPEffectTransition(PadEffect.SpeedBoost, true));
+                if (_ppHandler.usePostProcessingEffects && !_ppHandler.effectActive) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.SpeedBoost, true));
 
                 mainTimeElapsed = 0;
                 while (mainTimeElapsed < speedEffectDuration) // Timer for the speed boost
                 {
-                    player.m_WalkSpeed = initialPlayerWalkSpeed * speedMultiplier;
-                    player.m_RunSpeed = initialPlayerRunSpeed * speedMultiplier;
+                    _ppHandler.player.m_WalkSpeed = initialPlayerWalkSpeed * speedMultiplier;
+                    _ppHandler.player.m_RunSpeed = initialPlayerRunSpeed * speedMultiplier;
                     mainTimeElapsed += Time.deltaTime;
                     Debug.Log(mainTimeElapsed);
                     yield return null;
                 }
                 
-                effectActive = false;
-                if (usePostProcessingEffects) StartCoroutine(PPEffectTransition(PadEffect.SpeedBoost, false));
-                player.m_WalkSpeed = initialPlayerWalkSpeed;
-                player.m_RunSpeed = initialPlayerRunSpeed;
+                _ppHandler.effectActive = false;
+                if (_ppHandler.usePostProcessingEffects) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.SpeedBoost, false));
+                _ppHandler.player.m_WalkSpeed = initialPlayerWalkSpeed;
+                _ppHandler.player.m_RunSpeed = initialPlayerRunSpeed;
                 break;
             case PadEffect.JumpBoost:
-                player.m_JumpSpeed = initialPlayerRunSpeed * jumpMultiplier;
+                _ppHandler.player.m_JumpSpeed = initialPlayerRunSpeed * jumpMultiplier;
                 isJumpEffectActive = true;
 
                 while (isJumpEffectActive)
@@ -139,12 +112,12 @@ public class EffectPad : MonoBehaviour
                     Debug.Log("Jump effect active");
                     yield return null;
                 }
-                player.m_JumpSpeed = initialPlayerJumpSpeed;
+                _ppHandler.player.m_JumpSpeed = initialPlayerJumpSpeed;
                 break;
         }
     }
 
-    private IEnumerator PPEffectTransition(PadEffect effect, bool enable)
+    /*private IEnumerator PPEffectTransition(PadEffect effect, bool enable)
     {
         effectActive = true;
         float timeElapsed = 0;
@@ -191,5 +164,5 @@ public class EffectPad : MonoBehaviour
                 }
                 break;
         }
-    }
+    }*/
 }
