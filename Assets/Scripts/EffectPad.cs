@@ -104,6 +104,8 @@ public class EffectPad : MonoBehaviour
                 _ppHandler.player.m_RunSpeed = initialPlayerRunSpeed;
                 break;
             case PadEffect.JumpBoost:
+                if (_ppHandler.usePostProcessingEffects && !_ppHandler.effectActive) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.JumpBoost, true));
+                
                 _ppHandler.player.m_JumpSpeed = initialPlayerRunSpeed * jumpMultiplier;
                 isJumpEffectActive = true;
 
@@ -112,6 +114,8 @@ public class EffectPad : MonoBehaviour
                     Debug.Log("Jump effect active");
                     yield return null;
                 }
+                
+                if (_ppHandler.usePostProcessingEffects && !_ppHandler.effectActive) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.SpeedBoost, false));
                 _ppHandler.player.m_JumpSpeed = initialPlayerJumpSpeed;
                 break;
         }

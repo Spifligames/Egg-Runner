@@ -11,6 +11,8 @@ public class PadPostProcessingHandler : MonoBehaviour
     [SerializeField] private float vignetteIntensity = 0.5f;
     [SerializeField] private float lensDistortionIntensity = 30f;
     [SerializeField] private float cameraFovIncrease = 10f;
+    [SerializeField] private Color jumpVignetteColour = new Color(0, 0.25f, 1, 1);
+    [SerializeField] private Color speedVignetteColour = Color.green;
     
     [Header("Object References")]
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
@@ -19,8 +21,6 @@ public class PadPostProcessingHandler : MonoBehaviour
     private Camera playerCamera;
     
     // Post-processing specific private variables
-    private Color jumpVignetteColour = Color.green;
-    private Color speedVignetteColour = new Color(0, 0.25f, 1, 1);
     private PostProcessVolume ppVolume;
     private Vignette vignette;
     private LensDistortion lensDistortion;
@@ -55,11 +55,6 @@ public class PadPostProcessingHandler : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        Debug.Log(effectActive);
-    }
-
     public IEnumerator PPEffectTransition(EffectPad.PadEffect effect, bool enable)
     {
         effectActive = true;
@@ -68,6 +63,8 @@ public class PadPostProcessingHandler : MonoBehaviour
         {
             case EffectPad.PadEffect.SpeedBoost:
                 lastPadEffect = EffectPad.PadEffect.SpeedBoost;
+                vignette.color.value = speedVignetteColour;
+                
                 while (timeElapsed < postProcessTransitionTime)
                 {
                     switch (enable)
@@ -107,8 +104,39 @@ public class PadPostProcessingHandler : MonoBehaviour
                         break;
                 }
                 break;
+            
             case EffectPad.PadEffect.JumpBoost:
                 lastPadEffect = EffectPad.PadEffect.JumpBoost;
+                Debug.Log(vignette.color.value);
+                vignette.color.value = jumpVignetteColour;
+                
+                while (timeElapsed < postProcessTransitionTime)
+                {
+                    switch (enable)
+                    {
+                        case true:
+                            vignette.intensity.value = Mathf.Lerp(0, vignetteIntensity,
+                                timeElapsed / postProcessTransitionTime);
+                            break;
+                        case false:
+                            vignette.intensity.value = Mathf.Lerp(vignetteIntensity, 0,
+                                timeElapsed / postProcessTransitionTime);
+                            break;
+                    }
+                    timeElapsed += Time.deltaTime;
+                    yield return null;
+                }
+                
+                switch (enable)
+                {
+                    case true:
+                        vignette.intensity.value = vignetteIntensity;
+                        break;
+                    case false:
+                        vignette.intensity.value = 0;
+                        effectActive = false;
+                        break;
+                }
                 break;
         }
     }

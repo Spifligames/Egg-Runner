@@ -457,6 +457,26 @@ PrefabInstance:
       objectReference: {fileID: 150482323}
     - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
         type: 3}
+      propertyPath: jumpVignetteColour.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
+        type: 3}
+      propertyPath: jumpVignetteColour.g
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
+        type: 3}
+      propertyPath: speedVignetteColour.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
+        type: 3}
+      propertyPath: speedVignetteColour.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
+        type: 3}
       propertyPath: postProcessTransitionTime
       value: 0.3
       objectReference: {fileID: 0}
@@ -758,6 +778,8 @@ MonoBehaviour:
   vignetteIntensity: 0.5
   lensDistortionIntensity: 30
   cameraFovIncrease: 10
+  jumpVignetteColour: {r: 0, g: 1, b: 0, a: 1}
+  speedVignetteColour: {r: 0, g: 0.25, b: 1, a: 1}
   player: {fileID: 0}
   effectActive: 0
 --- !u!1 &1719440372
