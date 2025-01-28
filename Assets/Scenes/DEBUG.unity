@@ -455,6 +455,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 150482323}
+    - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
+        type: 3}
+      propertyPath: postProcessTransitionTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2574400202789589728, guid: aa2a1434ba01e274495cf4cc7c3a1105,
         type: 3}
       propertyPath: m_LocalPosition.x

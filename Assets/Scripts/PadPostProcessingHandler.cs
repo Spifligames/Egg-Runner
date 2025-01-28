@@ -25,6 +25,7 @@ public class PadPostProcessingHandler : MonoBehaviour
     private Vignette vignette;
     private LensDistortion lensDistortion;
     private float initialPlayerCameraFov;
+    private EffectPad.PadEffect lastPadEffect;
     
     [HideInInspector] public bool effectActive = false;
     
@@ -54,6 +55,11 @@ public class PadPostProcessingHandler : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        Debug.Log(effectActive);
+    }
+
     public IEnumerator PPEffectTransition(EffectPad.PadEffect effect, bool enable)
     {
         effectActive = true;
@@ -61,7 +67,7 @@ public class PadPostProcessingHandler : MonoBehaviour
         switch (effect)
         {
             case EffectPad.PadEffect.SpeedBoost:
-                    
+                lastPadEffect = EffectPad.PadEffect.SpeedBoost;
                 while (timeElapsed < postProcessTransitionTime)
                 {
                     switch (enable)
@@ -97,8 +103,12 @@ public class PadPostProcessingHandler : MonoBehaviour
                         vignette.intensity.value = 0;
                         lensDistortion.intensity.value = 0;
                         playerCamera.fieldOfView = initialPlayerCameraFov;
+                        effectActive = false;
                         break;
                 }
+                break;
+            case EffectPad.PadEffect.JumpBoost:
+                lastPadEffect = EffectPad.PadEffect.JumpBoost;
                 break;
         }
     }
