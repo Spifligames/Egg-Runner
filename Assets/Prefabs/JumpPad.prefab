@@ -185,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: d72bf5a89730d6b44bdce0d2f92905fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -240,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e395c48650133c447b7ea8dd300ef43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  padEffect: 0
+  padEffect: 1
   speedEffectDuration: 5
   speedMultiplier: 2
   jumpMultiplier: 2
-  basePadMaterial: {fileID: 0}
+  basePadMaterial: {fileID: 2100000, guid: 72f573f3938ac7145a1a6ffe5f23e76c, type: 2}
   jumpPadMaterial: {fileID: 2100000, guid: d72bf5a89730d6b44bdce0d2f92905fe, type: 2}
   speedPadMaterial: {fileID: 2100000, guid: 7d69e79c25af7a640983922f53cae41e, type: 2}
