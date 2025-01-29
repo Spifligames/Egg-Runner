@@ -5,7 +5,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class EffectPad : MonoBehaviour
 {
-    public enum PadEffect { JumpBoost, SpeedBoost }
+    public enum PadEffect { None, JumpBoost, SpeedBoost }
     
     [Header("General Effect Settings")]
     public PadEffect padEffect;
@@ -16,8 +16,9 @@ public class EffectPad : MonoBehaviour
     
     [Header("Jump Effect Settings")]
     public float jumpMultiplier = 2f;
-    
-    [Header("Object References")]
+
+    [Header("Object References")] 
+    [SerializeField] private Material basePadMaterial;
     [SerializeField] private Material jumpPadMaterial;
     [SerializeField] private Material speedPadMaterial;
 
@@ -28,11 +29,12 @@ public class EffectPad : MonoBehaviour
     private float initialPlayerJumpSpeed;
     private float mainTimeElapsed = 0f;
     private Renderer objectRenderer;
-    private Coroutine lastRoutine = null;
+    private Coroutine lastMainRoutine = null;
     private PadPostProcessingHandler _ppHandler;
 
     private void Start()
     {
+        // Tries to get the Post Processing handler from the scene. If the handler is not present in the scene, it'll produce an error message.
         try
         {
             _ppHandler = GameObject.FindGameObjectWithTag("PostProcessingHandler").GetComponent<PadPostProcessingHandler>();
@@ -42,6 +44,7 @@ public class EffectPad : MonoBehaviour
             Debug.LogError("ERROR: A post-processing handler couldn't be detected. Post-processing will not work at all without a post-processing handler present in the scene.\nDetails: " + e);
         }
         
+        // Initialising private variables
         initialPlayerWalkSpeed = _ppHandler.player.m_WalkSpeed;
         initialPlayerRunSpeed = _ppHandler.player.m_RunSpeed;
         initialPlayerJumpSpeed = _ppHandler.player.m_JumpSpeed;
@@ -57,6 +60,9 @@ public class EffectPad : MonoBehaviour
         {
             switch (padEffect)
             {
+                case PadEffect.None:
+                    objectRenderer.sharedMaterial = basePadMaterial;
+                    break;
                 case PadEffect.JumpBoost:
                     objectRenderer.sharedMaterial = jumpPadMaterial;
                     break;
@@ -71,8 +77,8 @@ public class EffectPad : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (lastRoutine != null) StopCoroutine(lastRoutine);
-            lastRoutine = StartCoroutine(StartPadEffect());
+            if (lastMainRoutine != null) StopCoroutine(lastMainRoutine);
+            lastMainRoutine = StartCoroutine(StartPadEffect());
         }
     }
 
@@ -81,11 +87,16 @@ public class EffectPad : MonoBehaviour
         if (padEffect == PadEffect.JumpBoost) isJumpEffectActive = false;
     }
 
+    /// <summary>
+    /// Starts the effect period for the effect pad, depending on which type of pad is chosen. If post-processing is enabled in the Post Processing Handler, the PPEffectTransition coroutine will also be called.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator StartPadEffect()
     {
         switch (padEffect)
         {
             case PadEffect.SpeedBoost:
+                // Start the post-processing coroutine to transition into the effects if post-processing is enabled.
                 if (_ppHandler.usePostProcessingEffects && !_ppHandler.effectActive) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.SpeedBoost, true));
 
                 mainTimeElapsed = 0;
@@ -94,24 +105,24 @@ public class EffectPad : MonoBehaviour
                     _ppHandler.player.m_WalkSpeed = initialPlayerWalkSpeed * speedMultiplier;
                     _ppHandler.player.m_RunSpeed = initialPlayerRunSpeed * speedMultiplier;
                     mainTimeElapsed += Time.deltaTime;
-                    Debug.Log(mainTimeElapsed);
+                    //Debug.Log(mainTimeElapsed);
                     yield return null;
                 }
                 
-                _ppHandler.effectActive = false;
+                // Start the post-processing coroutine to transition out of the effects if post-processing is enabled.
                 if (_ppHandler.usePostProcessingEffects) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.SpeedBoost, false));
                 _ppHandler.player.m_WalkSpeed = initialPlayerWalkSpeed;
                 _ppHandler.player.m_RunSpeed = initialPlayerRunSpeed;
                 break;
             case PadEffect.JumpBoost:
-                if (_ppHandler.usePostProcessingEffects && !_ppHandler.effectActive) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.JumpBoost, true));
+                if (_ppHandler.usePostProcessingEffects && (!_ppHandler.effectActive || _ppHandler.isSpeedEffectActive)) StartCoroutine(_ppHandler.PPEffectTransition(PadEffect.JumpBoost, true));
                 
                 _ppHandler.player.m_JumpSpeed = initialPlayerRunSpeed * jumpMultiplier;
                 isJumpEffectActive = true;
 
                 while (isJumpEffectActive)
                 {
-                    //Debug.Log("Jump effect active");
+                    Debug.Log("Jump effect active");
                     yield return null;
                 }
                 

@@ -780,6 +780,7 @@ MonoBehaviour:
   cameraFovIncrease: 10
   jumpVignetteColour: {r: 0, g: 1, b: 0, a: 1}
   speedVignetteColour: {r: 0, g: 0.25, b: 1, a: 1}
+  isSpeedEffectActive: 0
   player: {fileID: 0}
   effectActive: 0
 --- !u!1 &1719440372
@@ -1206,6 +1207,11 @@ PrefabInstance:
       objectReference: {fileID: 150482323}
     - target: {fileID: 8289363532693484230, guid: a5bb555c842d7ef40acf47ca18986578,
         type: 3}
+      propertyPath: basePadMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 72f573f3938ac7145a1a6ffe5f23e76c, type: 2}
+    - target: {fileID: 8289363532693484230, guid: a5bb555c842d7ef40acf47ca18986578,
+        type: 3}
       propertyPath: postProcessTransitionTime
       value: 0.2
       objectReference: {fileID: 0}
@@ -1440,6 +1446,11 @@ PrefabInstance:
       objectReference: {fileID: 150482323}
     - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
         type: 3}
+      propertyPath: padEffect
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
+        type: 3}
       propertyPath: effectDuration
       value: 0.1
       objectReference: {fileID: 0}
@@ -1447,6 +1458,16 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
+        type: 3}
+      propertyPath: basePadMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 72f573f3938ac7145a1a6ffe5f23e76c, type: 2}
+    - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
+        type: 3}
+      propertyPath: speedEffectDuration
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8769201482488176687, guid: db866bfe309039e4bae58c74e7321220,
         type: 3}
@@ -1498,6 +1519,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9109398851260696508, guid: db866bfe309039e4bae58c74e7321220,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d69e79c25af7a640983922f53cae41e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

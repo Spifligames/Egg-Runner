@@ -13,6 +13,7 @@ public class PadPostProcessingHandler : MonoBehaviour
     [SerializeField] private float cameraFovIncrease = 10f;
     [SerializeField] private Color jumpVignetteColour = new Color(0, 0.25f, 1, 1);
     [SerializeField] private Color speedVignetteColour = Color.green;
+    [HideInInspector] public bool isSpeedEffectActive = false;
     
     [Header("Object References")]
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
@@ -25,13 +26,13 @@ public class PadPostProcessingHandler : MonoBehaviour
     private Vignette vignette;
     private LensDistortion lensDistortion;
     private float initialPlayerCameraFov;
-    private EffectPad.PadEffect lastPadEffect;
     
     [HideInInspector] public bool effectActive = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Trys to find the post-processing volume in the scene and assign it to a private variable. The try catch method is used in case Damian forgets to import the volume into a scene.
         if (usePostProcessingEffects)
         {
             try
@@ -45,6 +46,7 @@ public class PadPostProcessingHandler : MonoBehaviour
                     e);
             }
 
+            // Initialising private variables
             vignette = ppVolume.profile.GetSetting<Vignette>();
             vignette.intensity.value = 0;
             lensDistortion = ppVolume.profile.GetSetting<LensDistortion>();
@@ -55,14 +57,23 @@ public class PadPostProcessingHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts a transition for the effect pad post-processing effects. Calling enable true starts a transition in, whereas false starts a transition out.
+    /// </summary>
+    /// <param name="effect"></param>
+    /// <param name="enable"></param>
+    /// <returns></returns>
     public IEnumerator PPEffectTransition(EffectPad.PadEffect effect, bool enable)
     {
         effectActive = true;
         float timeElapsed = 0;
         switch (effect)
         {
+            // ##### SPEED BOOST FX #####
             case EffectPad.PadEffect.SpeedBoost:
-                lastPadEffect = EffectPad.PadEffect.SpeedBoost;
+                if (enable) isSpeedEffectActive = true;
+                else isSpeedEffectActive = false;
+                
                 vignette.color.value = speedVignetteColour;
                 
                 while (timeElapsed < postProcessTransitionTime)
@@ -104,25 +115,42 @@ public class PadPostProcessingHandler : MonoBehaviour
                         break;
                 }
                 break;
-            
+            // ##### JUMP BOOST FX #####
             case EffectPad.PadEffect.JumpBoost:
-                lastPadEffect = EffectPad.PadEffect.JumpBoost;
                 Debug.Log(vignette.color.value);
-                vignette.color.value = jumpVignetteColour;
                 
                 while (timeElapsed < postProcessTransitionTime)
                 {
                     switch (enable)
                     {
                         case true:
-                            Debug.Log("Transitioned into jump pad FX");
-                            vignette.intensity.value = Mathf.Lerp(0, vignetteIntensity,
-                                timeElapsed / postProcessTransitionTime);
+                            if (isSpeedEffectActive)
+                            {
+                                Debug.Log("Transitioned into jump pad FX with speed effect active");
+                                vignette.color.value = Color.Lerp(speedVignetteColour, jumpVignetteColour,
+                                    timeElapsed / postProcessTransitionTime);
+                            }
+                            else
+                            {
+                                vignette.color.value = jumpVignetteColour;
+                                Debug.Log("Transitioned into jump pad FX");
+                                vignette.intensity.value = Mathf.Lerp(0, vignetteIntensity,
+                                    timeElapsed / postProcessTransitionTime);
+                            }
                             break;
                         case false:
-                            Debug.Log("Transitioned out of jump pad FX");
-                            vignette.intensity.value = Mathf.Lerp(vignetteIntensity, 0,
-                                timeElapsed / postProcessTransitionTime);
+                            if (isSpeedEffectActive)
+                            {
+                                Debug.Log("Transitioned out of jump pad FX with speed effect active");
+                                vignette.color.value = Color.Lerp(jumpVignetteColour, speedVignetteColour,
+                                    timeElapsed / postProcessTransitionTime);
+                            }
+                            else
+                            {
+                                Debug.Log("Transitioned out of jump pad FX");
+                                vignette.intensity.value = Mathf.Lerp(vignetteIntensity, 0,
+                                    timeElapsed / postProcessTransitionTime);
+                            }
                             break;
                     }
                     timeElapsed += Time.deltaTime;
@@ -132,11 +160,25 @@ public class PadPostProcessingHandler : MonoBehaviour
                 switch (enable)
                 {
                     case true:
-                        vignette.intensity.value = vignetteIntensity;
+                        if (isSpeedEffectActive)
+                        {
+                            vignette.color.value = jumpVignetteColour;
+                        }
+                        else
+                        {
+                            vignette.intensity.value = vignetteIntensity;
+                        }
                         break;
                     case false:
-                        vignette.intensity.value = 0;
-                        effectActive = false;
+                        if (isSpeedEffectActive)
+                        {
+                            vignette.color.value = speedVignetteColour;
+                        }
+                        else
+                        {
+                            vignette.intensity.value = 0;
+                            effectActive = false;
+                        }
                         break;
                 }
                 break;
