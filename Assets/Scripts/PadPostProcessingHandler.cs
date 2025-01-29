@@ -7,10 +7,10 @@ public class PadPostProcessingHandler : MonoBehaviour
 {
     [Header("General Settings")]
     public bool usePostProcessingEffects = true;
-    [SerializeField] private float postProcessTransitionTime = 0.5f;
-    [SerializeField] private float vignetteIntensity = 0.5f;
-    [SerializeField] private float lensDistortionIntensity = 30f;
-    [SerializeField] private float cameraFovIncrease = 10f;
+    [Range(0.1f, 0.5f)][SerializeField] private float postProcessTransitionTime = 0.5f;
+    [Range(0.0f, 1f)][SerializeField] private float vignetteIntensity = 0.5f;
+    [Range(-50f, 50f)][SerializeField] private float lensDistortionIntensity = 30f;
+    [Range(-30f, 30f)][SerializeField] private float cameraFovIncrease = 10f;
     [SerializeField] private Color jumpVignetteColour = new Color(0, 0.25f, 1, 1);
     [SerializeField] private Color speedVignetteColour = Color.green;
     [HideInInspector] public bool isSpeedEffectActive = false;

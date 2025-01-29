@@ -457,6 +457,11 @@ PrefabInstance:
       objectReference: {fileID: 150482323}
     - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
         type: 3}
+      propertyPath: cameraFovIncrease
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170515172228989522, guid: aa2a1434ba01e274495cf4cc7c3a1105,
+        type: 3}
       propertyPath: jumpVignetteColour.b
       value: 1
       objectReference: {fileID: 0}
@@ -615,7 +620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: field of view
-      value: 85
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: near clip plane
@@ -1467,7 +1472,7 @@ PrefabInstance:
     - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
         type: 3}
       propertyPath: speedEffectDuration
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8769201482488176687, guid: db866bfe309039e4bae58c74e7321220,
         type: 3}
