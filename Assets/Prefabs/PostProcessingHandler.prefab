@@ -45,9 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usePostProcessingEffects: 1
-  postProcessTransitionTime: 0.5
+  postProcessTransitionTime: 0.2
   vignetteIntensity: 0.5
   lensDistortionIntensity: 30
   cameraFovIncrease: 10
+  jumpVignetteColour: {r: 0, g: 0.25, b: 1, a: 1}
+  speedVignetteColour: {r: 0, g: 1, b: 0, a: 1}
+  isSpeedEffectActive: 0
   player: {fileID: 0}
   effectActive: 0
