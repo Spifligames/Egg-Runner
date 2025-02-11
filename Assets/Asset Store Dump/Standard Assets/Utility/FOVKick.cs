@@ -13,6 +13,7 @@ namespace UnityStandardAssets.Utility
         public float TimeToIncrease = 1f;               // the amount of time the field of view will increase over
         public float TimeToDecrease = 1f;               // the amount of time the field of view will take to return to its original size
         public AnimationCurve IncreaseCurve;
+        public AnimationCurve DecreaseCurve;
 
 
         public void Setup(Camera camera)
@@ -60,10 +61,11 @@ namespace UnityStandardAssets.Utility
         public IEnumerator FOVKickDown()
         {
             float t = Mathf.Abs((Camera.fieldOfView - originalFov)/FOVIncrease);
-            while (t > 0)
+            while (t < TimeToDecrease)
             {
-                Camera.fieldOfView = originalFov + (IncreaseCurve.Evaluate(t/TimeToDecrease)*FOVIncrease);
-                t -= Time.deltaTime;
+                Camera.fieldOfView = originalFov + (DecreaseCurve.Evaluate(t/TimeToDecrease)*FOVIncrease);
+                t += Time.deltaTime;
+                Debug.Log(t);
                 yield return new WaitForEndOfFrame();
             }
             //make sure that fov returns to the original size

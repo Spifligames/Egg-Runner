@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 1791024791}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_FovKick.FOVIncrease
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_FovKick.TimeToDecrease
@@ -1503,7 +1503,7 @@ PrefabInstance:
     - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
         type: 3}
       propertyPath: padEffect
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3943680087279887977, guid: db866bfe309039e4bae58c74e7321220,
         type: 3}
@@ -1579,7 +1579,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7d69e79c25af7a640983922f53cae41e, type: 2}
+      objectReference: {fileID: 2100000, guid: d72bf5a89730d6b44bdce0d2f92905fe, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
