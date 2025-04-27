@@ -1,9 +1,9 @@
 JUMP PADS
-- A blue pad that makes the player jump higher while being stood on
+	- A blue pad that makes the player jump higher while being stood on
 - Wind lines going straight up as you accelerate and fade as you deaccelerate
 
 SPEED PADS
-- A green pad that grants the player faster run speed for x seconds upon touching
+	- A green pad that grants the player faster run speed for x seconds upon touching
 - Visual HUD indicator of boost time remaining and green vignette
 - FOV slightly increases under the effects of speed and wind lines around the edges of the screen
 
@@ -38,3 +38,6 @@ EGG RUSH MODE
 - Falling out the map dos not reset time
 - Portal entry automatically loads next level
 - Restarting in the pause menu restarts the entire challenge
+
+BUG FIXES
+- Missing collision on bush and floor piece in 2-2
