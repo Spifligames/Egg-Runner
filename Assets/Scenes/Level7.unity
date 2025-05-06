@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &143614044
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &339599874
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &376625959
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &622384937
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2380,7 +2380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &624132962
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3068,7 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &755274292
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4270,7 +4270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &1086287456
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4734,7 +4734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &1128193187
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6222,7 +6222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beach
+  sceneName: Level7
 --- !u!64 &1456319610
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8769,7 +8769,7 @@ PrefabInstance:
     - target: {fileID: 6924861937128755856, guid: 5084635030df6994aab8170ca58e7eec,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Beach
+      value: Level7
       objectReference: {fileID: 0}
     - target: {fileID: 8438879038072067519, guid: 5084635030df6994aab8170ca58e7eec,
         type: 3}

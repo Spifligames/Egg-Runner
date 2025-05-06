@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level1-2
+  sceneName: Level2
 --- !u!1001 &404275215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1243,7 +1243,7 @@ PrefabInstance:
     - target: {fileID: 5122808815038884100, guid: 5084635030df6994aab8170ca58e7eec,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1-3
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 6924861937128755856, guid: 5084635030df6994aab8170ca58e7eec,
         type: 3}
@@ -1258,7 +1258,7 @@ PrefabInstance:
     - target: {fileID: 6924861937128755856, guid: 5084635030df6994aab8170ca58e7eec,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1-2
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 8438879038072067519, guid: 5084635030df6994aab8170ca58e7eec,
         type: 3}
