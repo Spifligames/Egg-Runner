@@ -2180,6 +2180,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2942336769523980661, guid: 30b82a5e639a83546995542953025c48, type: 3}
+--- !u!114 &620218053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361836030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &622384934
 GameObject:
   m_ObjectHideFlags: 0
@@ -8881,7 +8893,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 620218053}
     - target: {fileID: 7869097736554467592, guid: 07cf659104a41c948b33b62b34876025,
         type: 3}
       propertyPath: 'buttons.Array.data[0]'
