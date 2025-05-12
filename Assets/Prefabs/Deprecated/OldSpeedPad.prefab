@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7550136262419867875}
-  - component: {fileID: 3122362032395554065}
   m_Layer: 0
-  m_Name: SpeedPad
+  m_Name: OldSpeedPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,23 +33,6 @@ Transform:
   - {fileID: 8870191092483678399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3122362032395554065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084323425552828102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 866bd56d627b33c4fae6ac9f627261f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  padMaterial: {fileID: 2100000, guid: 7d69e79c25af7a640983922f53cae41e, type: 2}
-  effectConfig: {fileID: 11400000, guid: a741a777eaf0b6f4a8bcc62e49927ca2, type: 2}
-  trigger: {fileID: 2601447939011222308}
-  speedMultiplier: 2
-  speedEffectTime: 3
 --- !u!1 &2895788006818527468
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +45,7 @@ GameObject:
   - component: {fileID: 3644769871798475269}
   - component: {fileID: 742440334569038690}
   - component: {fileID: 7854054918981636862}
-  - component: {fileID: 2601447939011222308}
+  - component: {fileID: 8289363532693484230}
   m_Layer: 0
   m_Name: SpeedPadPlatform
   m_TagString: Untagged
@@ -160,7 +142,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 4, z: 1.1}
   m_Center: {x: 0, y: 1.5, z: 0}
---- !u!114 &2601447939011222308
+--- !u!114 &8289363532693484230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,10 +151,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2895788006818527468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b198aee470cd14bab53a350db678cc, type: 3}
+  m_Script: {fileID: 11500000, guid: e395c48650133c447b7ea8dd300ef43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentEffectPad: {fileID: 3122362032395554065}
+  padEffect: 2
+  speedEffectDuration: 5
+  speedMultiplier: 2
+  jumpMultiplier: 2
+  basePadMaterial: {fileID: 2100000, guid: 72f573f3938ac7145a1a6ffe5f23e76c, type: 2}
+  jumpPadMaterial: {fileID: 2100000, guid: d72bf5a89730d6b44bdce0d2f92905fe, type: 2}
+  speedPadMaterial: {fileID: 2100000, guid: 7d69e79c25af7a640983922f53cae41e, type: 2}
 --- !u!1 &6036504605686823036
 GameObject:
   m_ObjectHideFlags: 0

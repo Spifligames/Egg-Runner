@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8769201482488176687}
-  - component: {fileID: 1122683893912033546}
   m_Layer: 0
-  m_Name: JumpPad
+  m_Name: OldJumpPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,22 +34,6 @@ Transform:
   - {fileID: 7320737519093337884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1122683893912033546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349392039937442273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc6c7cb613697d4ab33a80c91a7653d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  padMaterial: {fileID: 2100000, guid: d72bf5a89730d6b44bdce0d2f92905fe, type: 2}
-  effectConfig: {fileID: 11400000, guid: a8c9299d731879e4fa140bc954919d0e, type: 2}
-  trigger: {fileID: 8580643405064683627}
-  jumpMultiplier: 2
 --- !u!1 &1613709727905614350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4982,7 +4965,7 @@ GameObject:
   - component: {fileID: 4163625693274766362}
   - component: {fileID: 9109398851260696508}
   - component: {fileID: 3337856520377925422}
-  - component: {fileID: 8580643405064683627}
+  - component: {fileID: 3943680087279887977}
   m_Layer: 0
   m_Name: jumpPadPlatform
   m_TagString: Untagged
@@ -5079,7 +5062,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 4, z: 1.1}
   m_Center: {x: 0, y: 1.5, z: 0}
---- !u!114 &8580643405064683627
+--- !u!114 &3943680087279887977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5088,7 +5071,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4524183863468623053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b198aee470cd14bab53a350db678cc, type: 3}
+  m_Script: {fileID: 11500000, guid: e395c48650133c447b7ea8dd300ef43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentEffectPad: {fileID: 1122683893912033546}
+  padEffect: 1
+  speedEffectDuration: 5
+  speedMultiplier: 2
+  jumpMultiplier: 2
+  basePadMaterial: {fileID: 2100000, guid: 72f573f3938ac7145a1a6ffe5f23e76c, type: 2}
+  jumpPadMaterial: {fileID: 2100000, guid: d72bf5a89730d6b44bdce0d2f92905fe, type: 2}
+  speedPadMaterial: {fileID: 2100000, guid: 7d69e79c25af7a640983922f53cae41e, type: 2}

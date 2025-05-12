@@ -30,7 +30,7 @@ MonoBehaviour:
     value: 0.5
   smoothness:
     overrideState: 1
-    value: 0.2
+    value: 0.15
   roundness:
     overrideState: 0
     value: 1

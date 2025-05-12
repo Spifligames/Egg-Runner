@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class PadPostProcessingHandler : MonoBehaviour
+public class OldPostProcessingHandler : MonoBehaviour
 {
     [Header("General Settings")]
     public bool usePostProcessingEffects = true;
@@ -28,6 +28,21 @@ public class PadPostProcessingHandler : MonoBehaviour
     private float initialPlayerCameraFov;
     
     [HideInInspector] public bool effectActive = false;
+    
+    #region =====  SINGLETON INITIALISATION =====
+    // Create a singleton out of the CameraFX script as it only needs to have one instance
+    private static OldPostProcessingHandler _instance;
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Destroy(_instance);
+        }
+
+        _instance = this;
+    }
+    public static OldPostProcessingHandler Instance => _instance;
+    #endregion
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,14 +78,14 @@ public class PadPostProcessingHandler : MonoBehaviour
     /// <param name="effect"></param>
     /// <param name="enable"></param>
     /// <returns></returns>
-    public IEnumerator PPEffectTransition(EffectPad.PadEffect effect, bool enable)
+    public IEnumerator PPEffectTransition(OldEffectPad.PadEffect effect, bool enable)
     {
         effectActive = true;
         float timeElapsed = 0;
         switch (effect)
         {
             // ##### SPEED BOOST FX #####
-            case EffectPad.PadEffect.SpeedBoost:
+            case OldEffectPad.PadEffect.SpeedBoost:
                 if (enable) isSpeedEffectActive = true;
                 else isSpeedEffectActive = false;
                 
@@ -116,7 +131,7 @@ public class PadPostProcessingHandler : MonoBehaviour
                 }
                 break;
             // ##### JUMP BOOST FX #####
-            case EffectPad.PadEffect.JumpBoost:
+            case OldEffectPad.PadEffect.JumpBoost:
                 Debug.Log(vignette.color.value);
                 
                 while (timeElapsed < postProcessTransitionTime)

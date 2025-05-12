@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
-public class EffectPad : MonoBehaviour
+public class OldEffectPad : MonoBehaviour
 {
     public enum PadEffect { None, JumpBoost, SpeedBoost }
     
@@ -30,14 +29,14 @@ public class EffectPad : MonoBehaviour
     private float mainTimeElapsed = 0f;
     private Renderer objectRenderer;
     private Coroutine lastMainRoutine = null;
-    private PadPostProcessingHandler _ppHandler;
+    private OldPostProcessingHandler _ppHandler;
 
     private void Start()
     {
         // Tries to get the Post Processing handler from the scene. If the handler is not present in the scene, it'll produce an error message.
         try
         {
-            _ppHandler = GameObject.FindGameObjectWithTag("PostProcessingHandler").GetComponent<PadPostProcessingHandler>();
+            _ppHandler = OldPostProcessingHandler.Instance;
         }
         catch (NullReferenceException e)
         {
