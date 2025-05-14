@@ -2577,6 +2577,7 @@ MonoBehaviour:
   totalJumps: 0
   totalDistance: 0
   levelsCompleted: 0
+  playerTransform: {fileID: 1039015390}
 --- !u!114 &989406673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,6 +2805,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1039015390 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 532002804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1094842625
 PrefabInstance:
   m_ObjectHideFlags: 0

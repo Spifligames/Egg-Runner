@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     public float totalDistance = 0f;
     public int levelsCompleted = 0;
 
-    private Transform playerTransform;
+    [SerializeField] private Transform playerTransform;
     private Vector3 lastPosition;
 
     private TextMeshPro statsWorldText;
