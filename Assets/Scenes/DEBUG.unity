@@ -617,6 +617,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1124049777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 677202600710875205, guid: 8498c40839a236f4d9060895ab1183f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6414669161581189857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1124049781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124049777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7852ca3892872b4cba0f5192c2b2c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: DEBUG
 --- !u!1 &1206144451
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +901,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1601957287}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1601957292}
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 3}
       insertIndex: -1
@@ -1093,7 +1116,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601957282}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 820eb252492116c4fbdcd253a7801845, type: 3}
   m_Name: 
@@ -1108,6 +1131,22 @@ MonoBehaviour:
   isSpeedEffectActive: 0
   player: {fileID: 0}
   effectActive: 0
+--- !u!114 &1601957292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601957282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3daaf15703ce75b44af23197222189cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usePostProcessingEffects: 1
+  postProcessingVolume: {fileID: 1114133936}
+  playerCamera: {fileID: 1791024791}
+  blankConfig: {fileID: 0}
 --- !u!1 &1741674175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752732784}
   - component: {fileID: 1752732783}
+  - component: {fileID: 1752732785}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1295,6 +1335,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1752732785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752732782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1773485185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6243899524932382982, guid: 5084635030df6994aab8170ca58e7eec,
@@ -1642,10 +1705,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4255433452178326483, guid: 8498c40839a236f4d9060895ab1183f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 677202600710875205, guid: 8498c40839a236f4d9060895ab1183f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1124049781}
   m_SourcePrefab: {fileID: 100100000, guid: 8498c40839a236f4d9060895ab1183f1, type: 3}
 --- !u!1001 &8082843038281249122
 PrefabInstance:

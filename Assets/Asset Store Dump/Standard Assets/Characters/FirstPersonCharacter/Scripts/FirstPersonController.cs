@@ -66,7 +66,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                if (CrossPlatformInputManager.GetButtonDown("Jump") && m_CharacterController.isGrounded)
+                {
+                    m_Jump = true;
+                    FindObjectOfType<PlayerStats>().RecordJump();
+                }
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -133,7 +138,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+
         }
+
 
 
         private void PlayJumpSound()
@@ -257,5 +264,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+
     }
 }

@@ -6,9 +6,24 @@ using UnityEngine.SceneManagement;
 public class ChangeSceneOnTriggerFixed : MonoBehaviour
 {
     public string sceneName;
-    void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(sceneName);
+        if (other.CompareTag("Player"))
+        {
+            PlayerStats stats = other.GetComponent<PlayerStats>();
+            if (stats != null)
+            {
+                stats.SaveStats();
+            }
+
+            StartCoroutine(LoadSceneAfterDelay());
+        }
     }
 
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene(sceneName);
+    }
 }

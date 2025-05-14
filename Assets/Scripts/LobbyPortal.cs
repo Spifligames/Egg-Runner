@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelEndScreen : MonoBehaviour
+public class LobbyPortal : MonoBehaviour
 {
     [SerializeField] private UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
     [SerializeField] private Timer timer;
@@ -19,7 +19,6 @@ public class LevelEndScreen : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerStats.Instance?.RecordLevelComplete();
             ShowButtons();
         }
     }
