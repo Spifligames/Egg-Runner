@@ -125,7 +125,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1349033069}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601957282}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
@@ -519,6 +519,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1026591322690081597, guid: ac54ff39440e7584c8354cb7f664a51d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798039209804419130, guid: ac54ff39440e7584c8354cb7f664a51d,
+        type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798039209804419130, guid: ac54ff39440e7584c8354cb7f664a51d,
+        type: 3}
+      propertyPath: isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798039209804419130, guid: ac54ff39440e7584c8354cb7f664a51d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8832686294311075224, guid: ac54ff39440e7584c8354cb7f664a51d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -574,10 +594,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: PostProcessingHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 9029004196019200630, guid: ac54ff39440e7584c8354cb7f664a51d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029004196019200630, guid: ac54ff39440e7584c8354cb7f664a51d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9029004196019200630, guid: ac54ff39440e7584c8354cb7f664a51d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1114133939}
     - targetCorrespondingSourceObject: {fileID: 9029004196019200630, guid: ac54ff39440e7584c8354cb7f664a51d,
         type: 3}
       insertIndex: -1
@@ -602,21 +636,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usePostProcessingEffects: 1
-  postProcessingVolume: {fileID: 1114133936}
+  postProcessingVolume: {fileID: 1114133939}
   playerCamera: {fileID: 1791024791}
   blankConfig: {fileID: 11400000, guid: aaac069110b5cc7429b4906f1f68704c, type: 2}
---- !u!114 &1114133936 stripped
+--- !u!114 &1114133939
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3798039209804419130, guid: ac54ff39440e7584c8354cb7f664a51d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1114133933}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114133934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 7ff534c818d459bedbfb9175a2212fd7, type: 2}
 --- !u!1 &1124049777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 677202600710875205, guid: 8498c40839a236f4d9060895ab1183f1,
@@ -897,14 +936,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1601957287}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1601957292}
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 3}
       insertIndex: -1
@@ -1103,50 +1134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b5f2c532c178db0a3b4ecc96708ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1601957282 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1349033069}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1601957287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601957282}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 820eb252492116c4fbdcd253a7801845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usePostProcessingEffects: 1
-  postProcessTransitionTime: 0.5
-  vignetteIntensity: 0.5
-  lensDistortionIntensity: 30
-  cameraFovIncrease: 10
-  jumpVignetteColour: {r: 0, g: 1, b: 0, a: 1}
-  speedVignetteColour: {r: 0, g: 0.25, b: 1, a: 1}
-  isSpeedEffectActive: 0
-  player: {fileID: 0}
-  effectActive: 0
---- !u!114 &1601957292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601957282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3daaf15703ce75b44af23197222189cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usePostProcessingEffects: 1
-  postProcessingVolume: {fileID: 1114133936}
-  playerCamera: {fileID: 1791024791}
-  blankConfig: {fileID: 0}
 --- !u!1 &1741674175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,10 +1449,10 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

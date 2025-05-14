@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vignetteColor: {r: 0, g: 1, b: 0, a: 1}
   vignetteIntensity: 0.5
-  lensDistortionIntensity: -30
+  lensDistortionIntensity: -0.4
   cameraFovIncrease: 10
   fadeTime: 0.5

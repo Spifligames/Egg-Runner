@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PostProcessingHandler : MonoBehaviour
 { 
     [Header("General Settings")]
     [SerializeField] private bool usePostProcessingEffects = true;
-    [SerializeField] private PostProcessVolume postProcessingVolume;
+    [SerializeField] private Volume postProcessingVolume;
     [SerializeField] private Camera playerCamera;
     private Coroutine activeEffect;
 
@@ -35,9 +37,24 @@ public class PostProcessingHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        postProcessingVolume.profile.TryGetSettings(out _vignette);
-        postProcessingVolume.profile.TryGetSettings(out _lensDistortion);
+        if (!postProcessingVolume.profile.TryGet(out _vignette)) throw new NullReferenceException(nameof(_vignette));
+        postProcessingVolume.profile.TryGet(out _lensDistortion);
         initialCameraFov = playerCamera.fieldOfView;
+
+        SetInitialSettings(blankConfig);
+    }
+
+    private void SetInitialSettings(PostProcessingEffectConfig config)
+    {
+        // Make sure the effects can be overridden during playtime
+        _vignette.intensity.overrideState = true;
+        _vignette.color.overrideState = true;
+        _lensDistortion.intensity.overrideState = true;
+        
+        _vignette.intensity.Override(config.vignetteIntensity);
+        _vignette.color.value = config.vignetteColor;
+        _lensDistortion.intensity.value = config.lensDistortionIntensity;
+        playerCamera.fieldOfView += config.cameraFovIncrease;
     }
     
     public void StartPadEffect(PostProcessingEffectConfig config)
@@ -63,17 +80,17 @@ public class PostProcessingHandler : MonoBehaviour
     {
         float timeElapsed = 0;
 
-        Color currentVignetteColour = _vignette.color;
-        float currentVignetteIntensity = _vignette.intensity;
-        float currentLensDistortionIntensity = _lensDistortion.intensity;
+        Color currentVignetteColour = _vignette.color.value;
+        float currentVignetteIntensity = _vignette.intensity.value;
+        float currentLensDistortionIntensity = _lensDistortion.intensity.value;
         float currentFov = playerCamera.fieldOfView;
         float newFov = initialCameraFov + config.cameraFovIncrease;
 
         while (timeElapsed < config.fadeTime)
         {
-            _vignette.color.Override(Color.Lerp(currentVignetteColour, config.vignetteColor, timeElapsed / config.fadeTime));
-            _vignette.intensity.Override(Mathf.Lerp(currentVignetteIntensity, config.vignetteIntensity, timeElapsed / config.fadeTime));
-            _lensDistortion.intensity.Override(Mathf.Lerp(currentLensDistortionIntensity, config.lensDistortionIntensity, timeElapsed / config.fadeTime));
+            _vignette.color.value = Color.Lerp(currentVignetteColour, config.vignetteColor, timeElapsed / config.fadeTime);
+            _vignette.intensity.value = Mathf.Lerp(currentVignetteIntensity, config.vignetteIntensity, timeElapsed / config.fadeTime);
+            _lensDistortion.intensity.value = Mathf.Lerp(currentLensDistortionIntensity, config.lensDistortionIntensity, timeElapsed / config.fadeTime);
             playerCamera.fieldOfView = Mathf.Lerp(currentFov, newFov, timeElapsed / config.fadeTime);
 
             timeElapsed += Time.deltaTime;
