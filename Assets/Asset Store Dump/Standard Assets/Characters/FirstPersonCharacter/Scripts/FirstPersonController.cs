@@ -70,7 +70,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (CrossPlatformInputManager.GetButtonDown("Jump") && m_CharacterController.isGrounded)
                 {
                     m_Jump = true;
-                    FindObjectOfType<PlayerStats>().RecordJump();
+                    //FindObjectOfType<PlayerStats>().RecordJump();
                 }
             }
 

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8832686294311075224}
   - component: {fileID: 1026591322690081597}
   - component: {fileID: 3798039209804419130}
+  - component: {fileID: 8688329410074448092}
+  - component: {fileID: 9088329529646689977}
   m_Layer: 6
   m_Name: Post-process Volume
   m_TagString: PostProcessingVolume
@@ -71,3 +73,36 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &8688329410074448092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029004196019200630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 7ff534c818d459bedbfb9175a2212fd7, type: 2}
+--- !u!114 &9088329529646689977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029004196019200630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3daaf15703ce75b44af23197222189cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usePostProcessingEffects: 1
+  postProcessingVolume: {fileID: 0}
+  playerCamera: {fileID: 0}
+  blankConfig: {fileID: 11400000, guid: aaac069110b5cc7429b4906f1f68704c, type: 2}
