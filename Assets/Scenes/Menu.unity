@@ -214,6 +214,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -521,6 +522,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -672,6 +674,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -973056611
@@ -751,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level1
+  scene: 1-1
 --- !u!114 &550434570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,6 +956,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1215,6 +1219,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1351,6 +1356,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1487,6 +1493,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1910,6 +1917,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2003,7 +2011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level4
+  scene: 2-1
 --- !u!114 &1021194676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,6 +2288,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2373,7 +2382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level6
+  scene: 3-1
 --- !u!114 &1039789906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2704,6 +2713,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -5
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3189,7 +3199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level2
+  scene: 1-2
 --- !u!114 &1576115975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3505,7 +3515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level5
+  scene: 2-2
 --- !u!114 &1624652333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3742,7 +3752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level7
+  scene: 4-1
 --- !u!114 &1703827844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4081,6 +4091,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -4253,6 +4264,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -4584,7 +4596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f95d89e47c60e2a8eaa72dc1b25c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level3
+  scene: 1-3
 --- !u!114 &2065561972
 MonoBehaviour:
   m_ObjectHideFlags: 0
