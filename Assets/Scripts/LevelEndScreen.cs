@@ -19,8 +19,12 @@ public class LevelEndScreen : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerStats.Instance?.RecordLevelComplete();
             ShowButtons();
+        }
+
+        StatsManager.Instance.AddCompletion();
+        {
+
         }
     }
 
